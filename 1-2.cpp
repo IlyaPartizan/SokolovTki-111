@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iostream>
 
-sing namespace std;
+using namespace std;
 
 /**
 * \brief Математическая функция, рассчитывающая сумму
