@@ -4,12 +4,12 @@
 using namespace std;
 
 /**
-* \brief Математическая функция, рассчитывающая значение функции y
-* \param const double x - константа, имеющая тип данных с плавающей точкой двойной точности
-* \return Возвращает значение функции y
+* \brief Математическая функция, рассчитывающая значение функции y.
+* \param const double x - константа, имеющая тип данных с плавающей точкой двойной точности.
+* \return Возвращает значение функции y.
 **/
 
-double gety(const double x);
+double getY(const double x);
 
 /**
 * \brief Точка входа в программу.
@@ -17,15 +17,18 @@ double gety(const double x);
 */
 int main()
 {
-    const double x = 1;
-    const auto y = gety(x);
+    const double x = 0.0;
+    const double step = 0.2;
+    const double leftBorder = 1.0;
+    const double rightBorder = 3.0;
+    for (double x = leftBorder; x <= rightBorder; x+= step)
+    {
+        cout << "y = " << getY(x) << endl;
+    }
+    return 0;
 }
 
-double gety(const double x)
+double getY(const double x)
 {
-    for (double x = 1; x <= 3; x = x + 0.2)
-    {
-        cout << "y = " << sin(log(x)) - cos(log(x)) + 2*(log(x)) << endl;
-    }
-    return 1;
+    return sin(log(x)) - cos(log(x)) + 2.0 * (log(x));
 }
