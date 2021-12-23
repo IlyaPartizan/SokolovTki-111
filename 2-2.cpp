@@ -6,7 +6,6 @@ using namespace std;
 /**
 * \brief вычисление переменной y по заданному x
 * \param сonst double x - переменная, которую вводит пользователь
-* \param сonst double y - искомая переменная
 * \param const double a - переменная, данная по условию
 * \return - значение y
 */
@@ -21,6 +20,7 @@ void ERROR();
  *\brief точка входа в программу.
  *\return 0 в случае успеха.
 */
+
 int main()
 {
     const double a=1.65;
@@ -32,6 +32,7 @@ int main()
     cout<<"Y = " << y <<endl;
     return 0;
 }
+
 double getY(const double x, const double a)
 {
     double e = 0.001;
