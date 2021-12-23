@@ -23,9 +23,9 @@ void ERROR();
 
 int main()
 {
-    const double a=1.65;
-    double x=0.0;
-    double y=0.0;
+    const double a = 1.65;
+    double x = 0.0;
+    double y = 0.0;
     cout<<"Введите значение переменной x"<<endl;
     cin>>x;
     y=getY(x,a);
