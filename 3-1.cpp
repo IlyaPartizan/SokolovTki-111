@@ -1,15 +1,22 @@
 #include <cmath>
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
 /**
 * \brief Математическая функция, рассчитывающая значение функции y.
-* \param const double x - константа
+* \param x - константа
 * \return Возвращает значение функции y.
 **/
+double getY(double x);
 
-double getY(const double x);
+/**
+* \brief Проверка y при заданном х
+* \param x Значение x
+* \return true, y существует при заданном х
+*/
+bool isCalculated(double x);
 
 /**
 * \brief Точка входа в программу.
@@ -17,18 +24,32 @@ double getY(const double x);
 */
 int main()
 {
-    const double x = 0.0;
+    double x = 1.0;
     const double step = 0.2;
-    const double leftBorder = 1.0;
     const double rightBorder = 3.0;
-    for (double x = leftBorder; x <= rightBorder; x+= step)
-    {
-        cout << "y = " << getY(x) << endl;
-    }
-    return 0;
+    
+  while(x < rightBorder)
+  {
+        if (isCalculated(x))
+        {
+        const double y =  getY(x);
+        std::cout << "x = " << std::setw(10) << std::left << std::setprecision(4) << x << " y = " << y << "\n";
+        }
+        else
+        {
+        cout << "При x = " << x << " y не существует" << "\n";
+        }
+        
+        x+= step;
+  }
+return 0;
 }
 
 double getY(const double x)
 {
     return sin(log(x)) - cos(log(x)) + 2.0 * (log(x));
+}
+bool isCalculated(const double x)
+{
+    return x >= 0;
 }
